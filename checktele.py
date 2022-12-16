@@ -16,13 +16,6 @@ a = 'qwertyuiopassdfghjklzxcvbnm'
 b = '1234567890'
 e = 'qwertyuiopassdfghjklzxcvbnm1234567890'
 
-banned = []
-isclaim = ["off"]
-isauto = ["off"]
-with open("banned.txt", "r") as f:
-    f = f.read().split()
-    banned.append(f)
-
 que = Queue()
 
 
@@ -48,12 +41,6 @@ def gen_user(choice):
         f = [c[0], d[0], c[0], c[0], c[0], d[0]]
         random.shuffle(f)
         username = ''.join(f)
-        if username in banned[0]:
-            c = d = random.choices(a)
-            d = random.choices(b)
-            f = [c[0], d[0], c[0], c[0], c[0], d[0]]
-            random.shuffle(f)
-            username = ''.join(f)
         else:
             pass
     if choice == "2":
@@ -62,12 +49,6 @@ def gen_user(choice):
         s = random.choices(e)
         f = [c[0], "_", d[0], "_", s[0]]
         username = ''.join(f)
-        if username in banned[0]:
-            c = random.choices(a)
-            d = random.choices(b)
-            s = random.choices(e)
-            f = [c[0], "_", d[0], "_", s[0]]
-            username = ''.join(f)
         else:
             pass
     if choice == "3":
@@ -76,12 +57,6 @@ def gen_user(choice):
         f = [c[0], c[0], c[0], c[0], c[0], d[0]]
         random.shuffle(f)
         username = ''.join(f)
-        if username in banned[0]:
-            c = d = random.choices(a)
-            d = random.choices(b)
-            f = [c[0], c[0], c[0], c[0], c[0], d[0]]
-            random.shuffle(f)
-            username = ''.join(f)
         else:
             pass
     if choice == "4":
@@ -92,14 +67,6 @@ def gen_user(choice):
         random.shuffle(f)
         username = ''.join(f)
         username = username+'bot'
-        if username in banned[0]:
-            c = random.choices(a)
-            d = random.choices(b)
-            s = random.choices(e)
-            f = [c[0], s[0], d[0]]
-            random.shuffle(f)
-            username = ''.join(f)
-            username = username+'bot'
         else:
             pass
     if choice == "5":
@@ -122,24 +89,12 @@ def gen_user(choice):
         f = [c[0], c[0], c[0], c[0], d[0]]
         random.shuffle(f)
         username = ''.join(f)
-        if username in banned[0]:
-            c = d = random.choices(a)
-            d = random.choices(b)
-            f = [c[0], c[0], c[0], c[0], d[0]]
-            random.shuffle(f)
-            username = ''.join(f)
     if choice == "7":
         c = d = random.choices(a)
         d = random.choices(b)
         f = [c[0], c[0], c[0], c[0], d[0], c[0], c[0]]
         random.shuffle(f)
         username = ''.join(f)
-        if username in banned[0]:
-            c = d = random.choices(a)
-            d = random.choices(b)
-            f = [c[0], c[0], c[0], c[0], d[0]]
-            random.shuffle(f)
-            username = ''.join(f)
     if choice == "8":
         c = random.choices(a)
         d = random.choices(b)
@@ -148,14 +103,6 @@ def gen_user(choice):
         random.shuffle(f)
         username = ''.join(f)
         username = username+'bot'
-        if username in banned[0]:
-            c = random.choices(a)
-            d = random.choices(b)
-            s = random.choices(e)
-            f = [c[0], s[0]]
-            random.shuffle(f)
-            username = ''.join(f)
-            username = username+'bot'
         else:
             pass
     return username
@@ -165,14 +112,6 @@ def gen_user(choice):
 async def _(event):
     if ispay2[0] == "yes":
         await event.edit(tele_checker)
-    else:
-        await event.edit("يجب الدفع لاستعمال هذا الامر !")
-
-
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.اليوزرات المبندة"))
-async def _(event):
-    if ispay2[0] == "yes":
-        await sedthon.send_file(event.chat_id, 'banned.txt')
     else:
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
 
@@ -230,24 +169,6 @@ async def _(event):
     تم صيد (@{username}) !
     ''')
                     break
-                except telethon.errors.rpcerrorlist.UsernameInvalidError:
-                    with open("banned.txt", "a") as f:
-                        f.write(f"\n{username}")
-                except Exception as eee:
-                    await sedthon.send_message(event.chat_id, f'''خطأ مع {username}
-    الخطأ :
-    {str(eee)}''')
-                    if "A wait of" in str(eee):
-                        break
-                    else:
-                        await sedthon.send_message(event.chat.id, "سأستمر بلفحص !")
-            else:
-                pass
-            trys += 1
-
-        isclaim.clear()
-        isclaim.append("off")
-        trys = ""
         await event.client.send_message(event.chat_id, "تم الانتهاء من الفحص")
     else:
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
