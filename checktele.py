@@ -185,10 +185,10 @@ async def _(event):
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
 
 
-# كلايم عدد نوع قناة
+# صيد عدد نوع قناة
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.كلايم (.*)"))
+@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.صيد (.*)"))
 async def _(event):
     if ispay2[0] == "yes":
         isclaim.clear()
@@ -199,13 +199,13 @@ async def _(event):
         trys = 0
         await event.edit(f"حسناً سأفحص نوع `{choice}` من اليوزرات على `{ch}` , بعدد `{msg[0]}` من المحاولات !")
 
-        @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.حالة الكلايم"))
+        @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.حالة الصيد"))
         async def _(event):
             if ispay2[0] == "yes":
                 if "on" in isclaim:
-                    await event.edit(f"الكلايم وصل لـ({trys}) من المحاولات")
+                    await event.edit(f"الصيد وصل لـ({trys}) من المحاولات")
                 elif "off" in isclaim:
-                    await event.edit("لايوجد كلايم شغال !")
+                    await event.edit("لايوجد صيد شغال !")
                 else:
                     await event.edit("خطأ")
             else:
@@ -227,12 +227,15 @@ async def _(event):
                     await sedthon(functions.channels.UpdateUsernameRequest(
                         channel=ch, username=username))
                     await event.client.send_message(event.chat_id, f'''
-    تم صيد (@{username}) !
+- Done ↣ (@{username})
+- By ↣ @S_Y_V !
+- Hunting History ↣ {Hussenk}
+- Hunting Hour ↣ {Levii}
     ''')
                     break
-                except telethon.errors.rpcerrorlist.UsernameInvalidError:
+                except Exception as c:
                     with open("banned.txt", "a") as f:
-                        f.write(f"\n{username}")
+                        f.write(f"{username}-{c}\n")
                 except Exception as eee:
                     await sedthon.send_message(event.chat_id, f'''خطأ مع {username}
     الخطأ :
@@ -249,8 +252,6 @@ async def _(event):
         isclaim.append("off")
         trys = ""
         await event.client.send_message(event.chat_id, "تم الانتهاء من الفحص")
-    else:
-        await event.edit("يجب الدفع لاستعمال هذا الامر !")
 
 
 @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.تثبيت (.*)"))
