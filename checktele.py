@@ -12,7 +12,7 @@ from user_agent import *
 from help import *
 from config import *
 from threading import Thread
-import datetime #Edit Levi @Z_V_M love 
+import datetime  
 now = datetime.datetime.today()
 mm = str(now.month)
 dd = str(now.day)
@@ -259,10 +259,10 @@ async def _(event):
                     await sedthon(functions.channels.UpdateUsernameRequest(
                         channel=ch, username=username))
                     await event.client.send_message(event.chat_id, f'''
-- HUNTED ~ (@{username})
-- By ~ @OO2NO 
-- Hunting History ~ {Hussenk}
-- Hunting Hour ~ {Levii}
+- Done ↣ (@{username})
+- By ↣ @OO2NO !
+- Hunting History ↣ {Hussenk}
+- Hunting Hour ↣ {Levii}
     ''')
                     break
                 except Exception as c:
@@ -319,10 +319,10 @@ async def _(event):
                         await sedthon(functions.channels.UpdateUsernameRequest(
                             channel=ch, username=username))
                         await event.client.send_message(event.chat_id, f'''
-- HUNTED ~ (@{username})
-- By ~ @OO2NO 
-- Hunting History ~ {Hussenk}
-- Hunting Hour ~ {Levii}
+- Done ↣ (@{username})
+- By ↣ @OO2NO !
+- Hunting History ↣ {Hussenk}
+- Hunting Hour ↣ {Levii}
     ''')
                         break
                     except telethon.errors.rpcerrorlist.UsernameInvalidError:
@@ -353,10 +353,10 @@ async def _(event):
                 await sedthon(functions.channels.UpdateUsernameRequest(
                     channel=ch, username=username))
                 await event.client.send_message(event.chat_id, f'''
-- HUNTED ~ (@{username})
-- By ~ @OO2NO 
-- Hunting History ~ {Hussenk}
-- Hunting Hour ~ {Levii}
+- Done ↣ (@{username})
+- By ↣ @OO2NO !
+- Hunting History ↣ {Hussenk}
+- Hunting Hour ↣ {Levii}
     ''')
             except telethon.errors.rpcerrorlist.UsernameInvalidError:
                 await event.client.send_message(event.chat_id, f"مبند `{username}` ❌❌")
