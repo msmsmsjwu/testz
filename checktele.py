@@ -12,7 +12,7 @@ from user_agent import *
 from help import *
 from config import *
 from threading import Thread
-import datetime #Edit Levi @Z_V_M love 
+import datetime 
 now = datetime.datetime.today()
 mm = str(now.month)
 dd = str(now.day)
