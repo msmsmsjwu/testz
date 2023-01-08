@@ -202,18 +202,32 @@ def gen_user(choice):
             pass
     if choice == "11":
         c = random.choices(a)
-        d = random.choices(b)
+        d = random.choices(e)
         s = random.choices(a)
         f = [c[0], "_", d[0], "_", s[0]]
         username = ''.join(f)
         if username in banned[0]:
             c = random.choices(a)
-            d = random.choices(b)
+            d = random.choices(e)
             s = random.choices(a)
             f = [c[0], "_", d[0], "_", s[0]]
             username = ''.join(f)
         else:
-            pass        
+            pass  
+        else:
+            pass
+    if choice == "12":
+        c = random.choices(a)
+        d = random.choices(e)
+        s = random.choices(e)
+        f = [c[0], "_", d[0], "_", s[0]]
+        username = ''.join(f)
+        if username in banned[0]:
+            c = random.choices(a)
+            d = random.choices(e)
+            s = random.choices(e)
+            f = [c[0], "_", d[0], "_", s[0]]
+            username = ''.join(f)        
     return username
 
 @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.تشيكر"))
