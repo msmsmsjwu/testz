@@ -213,8 +213,6 @@ def gen_user(choice):
             f = [c[0], "_", d[0], "_", s[0]]
             username = ''.join(f)
         else:
-            pass  
-        else:
             pass
     if choice == "12":
         c = random.choices(a)
