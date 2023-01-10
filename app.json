@@ -34,6 +34,11 @@
             "description": "يوزر البوت بدون ـ@ـ",
             "value": "",
             "required": true
+        },
+        "DATABASE_URL": {
+            "description": "رابط التخزين",
+            "value": "",
+            "required": true            
         }
     }
 }
