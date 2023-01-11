@@ -240,7 +240,7 @@ async def _(event):
     time_bio.append("off")
     await sedthon(
         functions.account.UpdateProfileRequest(
-            about="@N1111V"
+            about="@D_K_N"
         )
     )
 
@@ -669,7 +669,7 @@ async def _(event):
     photo = await sedthon.get_profile_photos(DEVS[0])
     await sedthon.send_file(event.chat_id, photo, caption=f'''
     The best !
-      - @OO2NO
+      - @D_K_N
 ''', reply_to=event)
 
 
@@ -678,7 +678,7 @@ async def _(event):
     photo = await sedthon.get_profile_photos(DEVS[0])
     await sedthon.send_file(event.chat_id, photo, caption=f'''
     The best !
-      - @OO2NO
+      - @D_K_N
 ''', reply_to=event)
 
 
@@ -687,7 +687,7 @@ async def _(event):
     photo = await sedthon.get_profile_photos(DEVS[0])
     await sedthon.send_file(event.chat_id, photo, caption=f'''
     The best !
-      - @OO2NO
+      - @D_K_N
 ''', reply_to=event)
 
 
@@ -696,7 +696,7 @@ async def _(event):
     photo = await sedthon.get_profile_photos(DEVS[0])
     await sedthon.send_file(event.chat_id, photo, caption=f'''
     The best !
-      - @OO2NO
+      - @D_K_N
 ''', reply_to=event)
 
 
@@ -789,7 +789,7 @@ ownerhson_id = 1964862074
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownerhson_id :
-        order = await event.reply('Welcom  - @OO2NO')
+        order = await event.reply('hi  - @D_K_N')
 
 
 @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.ورود"))
