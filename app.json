@@ -1,6 +1,6 @@
 {
     "name": "Sedthon",
-    "description": "User bot for telegram !",
+    "description": "User bot for tele !",
     "stack": "container",
     "repository": "https://github.com/perdark/per-sed",
     "keywords": [
