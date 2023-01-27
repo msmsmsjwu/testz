@@ -199,6 +199,7 @@ def gen_user(choice):
             random.shuffle(f)
             username = ''.join(f)
         else:
+            pass
             if choice == "11":
         c = random.choices(a)
         d = random.choices(e)
