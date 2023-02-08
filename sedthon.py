@@ -52,7 +52,7 @@ time_bio = ["off"]
 
 async def join_channel():
     try:
-        await sedthon(JoinChannelRequest("@sedthon"))
+        await sedthon(JoinChannelRequest("@IIXVVII"))
     except BaseException:
         pass
 
