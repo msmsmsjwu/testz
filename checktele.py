@@ -263,6 +263,7 @@ async def _(event):
 - By ↣ @OO2NO !
 - Hunting History ↣ {Hussenk}
 - Hunting Hour ↣ {Levii}
+- Loops ↣ {trys}
     ''')
                     break
                 except Exception as c:
