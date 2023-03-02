@@ -204,10 +204,10 @@ def gen_user(choice):
         else:
             pass
         if choice == "11":
-        c = random.choices(b)
-        d = random.choices(b)
-        s = random.choices(b)
-        f = [c[0], s[0]]
+            c = random.choices(b)
+            d = random.choices(b)
+            s = random.choices(b)
+            f = [c[0], s[0]]
         random.shuffle(f)
         username = ''.join(f)
         username = 'vip'+username
