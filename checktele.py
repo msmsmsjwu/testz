@@ -26,6 +26,9 @@ Levii=( hour + ":" + mi + ":" + ss)
 a = 'qwertyuiopassdfghjklzxcvbnm'
 b = '1234567890'
 e = 'qwertyuiopassdfghjklzxcvbnm1234567890'
+v = 'v'
+i = 'i'
+p = 'p'
 
 banned = []
 isclaim = ["off"]
@@ -196,6 +199,21 @@ def gen_user(choice):
             c = d = random.choices(a)
             d = random.choices(b)
             f = [c[0], d[0], "_", c[0], c[0]]
+            random.shuffle(f)
+            username = ''.join(f)
+        else:
+            pass
+        if choice == "11":
+        c = d = random.choices(v)
+        d = random.choices(i)
+        m = random.choices(p)
+        f = [c[0], d[0], m[0], b[0], b[0], b[0]]
+        random.shuffle(f)
+        username = ''.join(f)
+        if username in banned[0]:
+            c = d = random.choices(a)
+            d = random.choices(b)
+            f = [c[0], c[0], c[0], c[0], c[0], d[0]]
             random.shuffle(f)
             username = ''.join(f)
         else:
