@@ -220,7 +220,7 @@ async def _(event):
 # صيد عدد نوع قناة
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.صيد (.*)"))
+@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.ص (.*)"))
 async def _(event):
     if ispay2[0] == "yes":
         isclaim.clear()
@@ -231,7 +231,7 @@ async def _(event):
         trys = 0
         await event.edit(f"حسناً سأفحص نوع `{choice}` من اليوزرات على `{ch}` , بعدد `{msg[0]}` من المحاولات !")
 
-        @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.حالة الصيد"))
+        @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.ح"))
         async def _(event):
             if ispay2[0] == "yes":
                 if "on" in isclaim:
@@ -260,7 +260,7 @@ async def _(event):
                         channel=ch, username=username))
                     await event.client.send_message(event.chat_id, f'''
 - Done ↣ (@{username})
-- By ↣ @OO2NO !
+- By ↣ @Barrghash !
 - Hunting History ↣ {Hussenk}
 - Hunting Hour ↣ {Levii}
 - Loops ↣ {trys}
