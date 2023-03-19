@@ -26,9 +26,6 @@ Levii=( hour + ":" + mi + ":" + ss)
 a = 'qwertyuiopassdfghjklzxcvbnm'
 b = '1234567890'
 e = 'qwertyuiopassdfghjklzxcvbnm1234567890'
-v = 'v'
-i = 'i'
-p = 'p'
 
 banned = []
 isclaim = ["off"]
@@ -204,20 +201,21 @@ def gen_user(choice):
         else:
             pass
         if choice == "11":
-            c = d = random.choices(v)
-            d = random.choices(i)
-            m = random.choices(p)
-        f = [c[0], d[0], m[0], b[0], b[0], b[0]]
-        random.shuffle(f)
-        username = ''.join(f)
-        if username in banned[0]:
-            c = d = random.choices(a)
-            d = random.choices(b)
-            f = [c[0], c[0], c[0], c[0], c[0], d[0]]
-            random.shuffle(f)
-            username = ''.join(f)
-        else:
-            pass
+        app = "1234567890"
+        d = random.choices(app)
+        s = random.choices(app)
+        e = random.choices(app)
+        f = ["vip", d[0], s[0], e[0]]
+        username = ''.join(f)
+        if username in banned[0]:
+            app = "1234567890"
+            d = random.choices(app)
+            e = random.choices(app)
+            s = random.choices(app)
+            f = ["vip", d[0], s[0], e[0]]
+            username = ''.join(f)
+        else:
+            pass
     return username
 
 @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.تشيكر"))
