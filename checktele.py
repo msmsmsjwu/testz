@@ -282,7 +282,7 @@ async def _(event):
             trys += 1
 
         isclaim.clear()
-        isclaim.append("off")
+        isclaim.append("on")
         trys = ""
         await event.client.send_message(event.chat_id, "تم الانتهاء من الفحص")
         
@@ -366,7 +366,7 @@ async def _(event):
     الخطأ :
     {str(eee)}''')
 Threads=[] 
-for t in range(100):
+for t in range(50):
     x = threading.Thread(target=_)
     le = threading.Thread(target=gen_user)
     x.start()
