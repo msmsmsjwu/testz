@@ -282,7 +282,7 @@ async def _(event):
             trys += 1
 
         isclaim.clear()
-        isclaim.append("on")
+        isclaim.append("off")
         trys = ""
         await event.client.send_message(event.chat_id, "تم الانتهاء من الفحص")
         
